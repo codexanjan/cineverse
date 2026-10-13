@@ -63,3 +63,6 @@ pnpm-debug.log*
 # OS Files
 .DS_Store
 Thumbs.db
+
+# GitHub Workflows (requires workflow scope to push)
+.github/workflows/
