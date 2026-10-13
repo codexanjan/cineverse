@@ -1,0 +1,10 @@
+{
+  "source": "https://www.kaggle.com/datasets/asaniczka/tmdb-movies-dataset-2023-930k-movies",
+  "source_sha256": "d0af743e9c7c7c764907fa8435d58e2eda6708eb0c6985d61c5812926a315857",
+  "snapshot": "TMDB community snapshot 2026-09-22",
+  "matched": 9626,
+  "movies": 9742,
+  "with_poster": 9693,
+  "with_overview": 9687,
+  "with_runtime": 9693
+}

@@ -1,0 +1,26 @@
+{
+  "name": "@cineverse/web",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "node ../../scripts/start-web.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "2.57.4",
+    "framer-motion": "13.4.1",
+    "gsap": "3.15.0",
+    "lucide-react": "0.468.0",
+    "next": "16.3.5",
+    "react": "19.2.0",
+    "react-dom": "19.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.18.6",
+    "@types/react": "19.1.13",
+    "@types/react-dom": "19.1.9",
+    "typescript": "5.9.2"
+  }
+}

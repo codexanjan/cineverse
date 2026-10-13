@@ -1,0 +1,32 @@
+{
+  "dataset": "ml-latest-small",
+  "algorithm": "biased matrix factorization SGD",
+  "ratings": 100836,
+  "users": 610,
+  "movies": 9742,
+  "held_out": 9984,
+  "validation_rmse": 0.8520589353751237,
+  "mean_baseline_rmse": 1.0462514162063599,
+  "epochs": 18,
+  "history": [
+    0.902068782293044,
+    0.8860607974510715,
+    0.8786850766718317,
+    0.8751624658687178,
+    0.8718987585686538,
+    0.8679969835653791,
+    0.8661740964869548,
+    0.8644707187756269,
+    0.8620701212247055,
+    0.8600102706414174,
+    0.8584760325533188,
+    0.8570527112575169,
+    0.855163870051481,
+    0.8545428670868507,
+    0.8537887872963962,
+    0.8527794763194545,
+    0.852190036393111,
+    0.8520589353751237
+  ],
+  "note": "Deterministic random validation split, used for model selection; not an untouched test set. Serving folds in new users from signed ratings."
+}

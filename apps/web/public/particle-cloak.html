@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cineverse — Particle Cloak</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #06080c;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .cloak-host {
+      position: relative;
+      width: min(92vw, 840px);
+      height: min(70vh, 520px);
+      background: #080b11;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9), 0 0 40px rgba(245, 197, 24, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .underneath {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px;
+      user-select: none;
+      pointer-events: none;
+    }
+    .underneath h1 {
+      font-size: clamp(36px, 6vw, 64px);
+      font-weight: 800;
+      letter-spacing: -2px;
+      line-height: 1.05;
+      background: linear-gradient(135deg, #ffffff 20%, #f5c518 70%, #ff8a00 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 16px;
+    }
+    .underneath p {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 13px;
+      letter-spacing: 2px;
+      color: rgba(255, 255, 255, 0.6);
+      text-transform: uppercase;
+    }
+    canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      cursor: crosshair;
+    }
+  </style>
+</head>
+<body>
+  <div class="cloak-host" id="host">
+    <div class="underneath">
+      <h1>THE NEURAL VAULT</h1>
+      <p>9,742 Stories · Synesthesia · Wavelength</p>
+    </div>
+    <canvas id="canvas"></canvas>
+  </div>
+
+  <script>
+    const host = document.getElementById("host");
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    let w = host.clientWidth;
+    let h = host.clientHeight;
+    let dpr = window.devicePixelRatio || 1;
+
+    function resize() {
+      w = host.clientWidth;
+      h = host.clientHeight;
+      dpr = window.devicePixelRatio || 1;
+      canvas.width = w * dpr;
+      canvas.height = h * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      initParticles();
+    }
+
+    class Particle {
+      constructor(homeX, homeY) {
+        this.homeX = homeX;
+        this.homeY = homeY;
+        this.x = homeX;
+        this.y = homeY;
+        this.vx = 0;
+        this.vy = 0;
+        this.radius = 1 + Math.random() * 1.6;
+      }
+    }
+
+    let particles = [];
+    function initParticles() {
+      particles = [];
+      const step = Math.max(9, Math.min(w, h) / 22);
+      for (let x = 0; x <= w + step; x += step) {
+        for (let y = 0; y <= h + step; y += step) {
+          particles.push(new Particle(x, y));
+        }
+      }
+    }
+
+    let pointer = { x: w / 2, y: h / 2 };
+    let eased = { x: w / 2, y: h / 2 };
+    let hasEntered = false;
+    let isTouch = false;
+    let time = 0;
+
+    function loop() {
+      time += 0.02;
+      const minDim = Math.min(w, h);
+      const R = 0.34 * minDim;
+
+      // Lissajous idle drift before mouse enters or if touch
+      if (!hasEntered || isTouch) {
+        const lissX = w / 2 + Math.sin(time * 0.7) * (w * 0.32);
+        const lissY = h / 2 + Math.sin(time * 1.1 + 0.4) * (h * 0.28);
+        if (!hasEntered) {
+          pointer.x = lissX;
+          pointer.y = lissY;
+        }
+      }
+
+      // Lerp eased pointer
+      eased.x += (pointer.x - eased.x) * 0.16;
+      eased.y += (pointer.y - eased.y) * 0.16;
+
+      ctx.clearRect(0, 0, w, h);
+
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
+        const dx = p.x - eased.x;
+        const dy = p.y - eased.y;
+        const dist = Math.hypot(dx, dy) || 0.001;
+
+        if (dist < R) {
+          const f = Math.pow(1 - dist / R, 2) * 3.4;
+          const nx = dx / dist;
+          const ny = dy / dist;
+          p.vx += nx * f;
+          p.vy += ny * f;
+        }
+
+        // Pull home
+        p.vx += (p.homeX - p.x) * 0.024;
+        p.vy += (p.homeY - p.y) * 0.024;
+
+        // Damp
+        p.vx *= 0.86;
+        p.vy *= 0.86;
+
+        // Integrate
+        p.x += p.vx;
+        p.y += p.vy;
+
+        // Fade by displacement
+        const distHome = Math.hypot(p.x - p.homeX, p.y - p.homeY);
+        const alpha = Math.max(0, 0.72 - distHome / 70);
+
+        if (alpha > 0.01) {
+          ctx.fillStyle = `rgba(245, 197, 24, ${alpha.toFixed(3)})`;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+
+      requestAnimationFrame(loop);
+    }
+
+    resize();
+    window.addEventListener("resize", resize);
+    requestAnimationFrame(loop);
+
+    host.addEventListener("pointerenter", () => {
+      hasEntered = true;
+    });
+
+    host.addEventListener("pointermove", (e) => {
+      const rect = host.getBoundingClientRect();
+      pointer.x = e.clientX - rect.left;
+      pointer.y = e.clientY - rect.top;
+      hasEntered = true;
+    });
+
+    host.addEventListener("pointerleave", () => {
+      hasEntered = false;
+    });
+
+    host.addEventListener("touchstart", () => {
+      isTouch = true;
+      hasEntered = true;
+    });
+  </script>
+</body>
+</html>

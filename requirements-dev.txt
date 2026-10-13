@@ -1,0 +1,2 @@
+# Optional tooling; runtime dependencies are in apps/api/requirements.lock.txt.
+ruff==0.11.5

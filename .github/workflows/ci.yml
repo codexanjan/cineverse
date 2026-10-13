@@ -1,0 +1,36 @@
+name: Verify CINEVERSE
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: pgvector/pgvector:pg16
+        env: { POSTGRES_PASSWORD: test, POSTGRES_DB: cineverse }
+        ports: ["5432:5432"]
+        options: --health-cmd="pg_isready -U postgres" --health-interval=5s --health-retries=10
+      redis:
+        image: redis:7-alpine
+        ports: ["6379:6379"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - uses: actions/setup-node@v4
+        with: { node-version: "22", cache: npm }
+      - run: pip install -r apps/api/requirements.lock.txt
+      - run: alembic upgrade head && alembic downgrade base && alembic upgrade head
+        working-directory: apps/api
+        env:
+          {
+            DATABASE_URL: "postgresql+psycopg://postgres:test@localhost:5432/cineverse",
+          }
+      - run: python -m pytest -q
+        working-directory: apps/api
+      - run: python -m pytest -q
+        working-directory: apps/api
+        env:
+          TEST_DATABASE_URL: postgresql+psycopg://postgres:test@localhost:5432/cineverse
+      - run: npm ci && npm run build
+      - run: npx playwright install --with-deps chromium
+      - run: node scripts/verify-browser.mjs

@@ -1,0 +1,20 @@
+{
+  "name": "cineverse",
+  "private": true,
+  "workspaces": [
+    "apps/web"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w apps/web",
+    "build": "npm run build -w apps/web",
+    "start": "npm run start -w apps/web",
+    "typecheck": "npm run typecheck -w apps/web",
+    "test:e2e": "playwright test",
+    "format": "prettier --write \"apps/web/**/*.{ts,tsx,css}\" \"e2e/**/*.ts\" \"*.{json,ts,yaml}\""
+  },
+  "devDependencies": {
+    "@playwright/test": "1.55.1",
+    "agent-browser": "0.38.1",
+    "prettier": "3.6.2"
+  }
+}
