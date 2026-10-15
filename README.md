@@ -1,10 +1,13 @@
 <div align="center">
 
-<img src="assets/hero-banner.jpg" alt="Cineverse AI — The Intelligent Cinematic Universe" width="100%" />
+<a href="https://cineverseai.vercel.app">
+  <img src="assets/hero-banner.jpg" alt="Cineverse AI — The Intelligent Cinematic Universe" width="100%" />
+</a>
 
 # 🎬 CINEVERSE AI
-### The Intelligent Cinematic Universe & AI Recommendation Engine
+### The Intelligent Cinematic Universe & Neural Recommendation Engine
 
+[![Live Demo](https://img.shields.io/badge/Live_Demo-cineverseai.vercel.app-00df8f?style=for-the-badge&logo=vercel&logoColor=black)](https://cineverseai.vercel.app)
 [![Next.js](https://img.shields.io/badge/Next.js-16.3-black?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.115-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
@@ -14,11 +17,13 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 
 <p align="center">
-  <b>Tired of endless streaming fatigue and algorithmic echo chambers?</b><br>
-  Cineverse blends <b>Latent Semantic NLP</b>, <b>Hybrid Collaborative Matrix Factorization</b>, and <b>Cinematic Motion Design</b> into a breathtaking discovery engine.
+  <b>Tired of endless streaming fatigue and commercial algorithmic echo chambers?</b><br>
+  Cineverse combines <b>Latent Semantic NLP</b>, <b>Collaborative Matrix Factorization</b>, <b>Minimax Group Consensus</b>, and <b>Cinematic Motion Design</b> into a state-of-the-art discovery universe.
 </p>
 
-[✨ Explore Features](#-key-features) • [🚀 Quickstart](#-quickstart) • [🧠 ML Architecture](#-neural--hybrid-recommendation-engine) • [🐳 Docker Setup](#-docker--production-deployment) • [📡 API Reference](#-api-endpoints)
+### 🌐 [**Experience Live Demo on Vercel: cineverseai.vercel.app**](https://cineverseai.vercel.app)
+
+[🌐 Live App](https://cineverseai.vercel.app) • [✨ Key Features](#-key-features) • [🔄 System Workflow](#-system-workflow--architecture) • [💡 Novelty & Innovation](#-novelty--competitive-advantage) • [🧠 ML Engine](#-neural--hybrid-recommendation-engine) • [🚀 Quickstart](#-quickstart) • [📡 API Reference](#-api-endpoints)
 
 ---
 
@@ -26,29 +31,121 @@
 
 ## 🌟 Why Cineverse?
 
-Mainstream streaming platforms have a problem: **their algorithms optimize for ad clicks and studio contracts, not your genuine taste.** 
+Mainstream streaming platforms have a fundamental conflict of interest: **their algorithms optimize for ad impressions, watch-time retention, and studio licensing contracts—not your genuine taste.**
 
-**Cineverse AI** changes the paradigm:
-- 🎯 **Algorithmic Agency**: Fine-tune your recommendations with real-time mood sliders, genre DNA weightings, and novelty controls.
-- ⚡ **Zero-Tracking Local Sandbox**: Run the entire stack locally with 100% offline data—no mandatory API keys, tracking cookies, or subscriptions.
-- 👥 **Group Night Solver**: Solves the "what should we watch?" argument for 2–8 people using minimax consensus ranking.
-- 💎 **Hidden Gems Radar**: Surfaces critically acclaimed masterpieces that the mainstream algorithms bury.
+**Cineverse AI** restores algorithmic agency to the cinephile:
+- 🌐 **Instant Live Access**: Deployed globally on [Vercel](https://cineverseai.vercel.app) with lightning-fast edge performance.
+- 🎯 **Algorithmic Agency**: Fine-tune recommendations with real-time mood spectrum sliders, genre DNA weightings, and novelty controls.
+- ⚡ **Zero-Tracking Privacy**: Run entirely in an open local or edge sandbox—no surveillance cookies, ad pixels, or paywalled subscriptions.
+- 👥 **Group Night Consensus**: Solves the "what should we watch?" argument for 2–8 people using mathematical game-theoretic minimax fairness.
+- 💎 **Hidden Gems Radar**: Surfaces critically acclaimed world cinema and indie masterworks that mainstream algorithms bury.
 
 ---
 
 ## 📸 Visual Showcase
 
 <div align="center">
-  <img src="assets/discovery-showcase.jpg" alt="Cineverse AI Movie Discovery Interface" width="100%" />
-  <p><i>Neural Taste DNA radar chart, real-time mood spectrum sliders, and natural language movie search.</i></p>
+  <a href="https://cineverseai.vercel.app/discover">
+    <img src="assets/discovery-showcase.jpg" alt="Cineverse AI Movie Discovery Interface" width="100%" />
+  </a>
+  <p><i><b>Real Discovery Interface</b>: 19-genre Neural Taste DNA analytics, instant mood synesthesia buttons, natural language theme search, and live movie catalog.</i></p>
 </div>
 
 <br>
 
 <div align="center">
-  <img src="assets/theater-showcase.jpg" alt="Cineverse 4K Trailer Theater & Cast Orbit" width="100%" />
-  <p><i>4K HDR trailer cinema theater, interactive cast & crew rolodex, and fluid glassmorphism controls.</i></p>
+  <a href="https://cineverseai.vercel.app/discover">
+    <img src="assets/theater-showcase.jpg" alt="Cineverse 4K Trailer Theater & Cast Orbit" width="100%" />
+  </a>
+  <p><i><b>Real Cinema Theater & Spec Explorer</b>: High-res movie detail modal featuring Community Ratings, Metascore, 96% Taste Sync, official YouTube trailer playback, interactive cast & crew credits, and behind-the-scenes trivia.</i></p>
 </div>
+
+---
+
+## 🔄 System Workflow & Architecture
+
+Cineverse operates as an end-to-end, multi-stage recommendation and streaming intelligence pipeline. The diagram below illustrates how raw user input evolves into verified cinematic recommendations:
+
+```mermaid
+flowchart TD
+    subgraph UI ["User Experience Layer (Next.js 16 + Vercel Edge)"]
+        A[User Input: Mood Synesthesia / Natural Language Prompt / Genre DNA] --> B[Client Query Dispatcher]
+        V[Personal Taste DNA Radar & Annual Stats] --> B
+        G[Group Night Watch Party Selector: 2–8 Viewers] --> B
+    end
+
+    subgraph ML_PIPELINE ["Neural Recommendation & Hybrid Scoring Pipeline"]
+        B --> C{Query Type}
+        C -->|Natural Language / Plot Theme| D["Latent Semantic Plot Encoder (TruncatedSVD + TF-IDF)"]
+        C -->|Taste Profile / Collaborative| E["Collaborative Matrix Factorization (MovieLens 32M Latent Space)"]
+        C -->|Group Watch Mode| F["Minimax Game-Theoretic Consensus Optimizer"]
+        
+        D --> H["Cosine Similarity in 100D Semantic Subspace"]
+        E --> I["User-Item Rating Prediction Engine (r̂_u,m)"]
+        F --> J["Veto Prevention & Collective Utility Balancer"]
+        
+        H --> K["Multi-Objective Ensemble Ranker"]
+        I --> K
+        J --> K
+        
+        L["Hard Constraints Engine (Decade, Runtime, Certifications, Exclusions)"] --> K
+        M["Serendipity & Novelty Multiplier (w_n · Novelty(m))"] --> K
+    end
+
+    subgraph DATA_LAYER ["Catalog & Feature Store (9,742+ Films)"]
+        N[(MovieLens 32M Benchmark Corpus)] --> E
+        O[(Precomputed Semantic Vectors: semantic.npz)] --> D
+        P[(TMDB High-Res Posters & Backdrops)] --> Q[Edge Cache / CDN]
+        R[(YouTube 4K Trailer Resolution API)] --> Q
+    end
+
+    subgraph OUTPUT ["Output & Cinema Theater Hydration"]
+        K --> S[Ranked Recommendation Set with Match Rationales]
+        S --> T[Interactive 3D Rolodex & Expanding Rails]
+        S --> U[Instant 4K Trailer Player & Verified Cast Rolodex]
+    end
+```
+
+### Detailed Execution Flow:
+1. **Intent Capture**: The viewer enters a natural-language description (e.g., *"existential deep-space psychological paradox"*), taps a mood trigger (*Mind-bending*, *Adrenaline*, *Melancholic*), or adjusts their 19-genre Taste DNA.
+2. **Dual-Path Latent Encoding**:
+   - The **Semantic Plot Encoder** projects the query into a 100-dimensional continuous vector space trained on 9,687+ enriched movie plots via TruncatedSVD and TF-IDF.
+   - The **Collaborative Factorizer** projects user interaction vectors against latent movie factors derived from MovieLens matrix decomposition.
+3. **Multi-Objective Hybrid Ranking**: The candidate pool is scored using a multi-factor objective function balancing semantic relevance, predicted taste affinity, genre alignment, and serendipity.
+4. **Group Minimax Fairness (Optional)**: If in *Group Night* mode, the engine evaluates candidates across all attendees and optimizes for the film that minimizes individual viewer dissatisfaction ($\max \min_{u \in U} \text{utility}(u, m)$).
+5. **Edge Hydration & Playback**: Results are enriched with verified TMDB artwork, verified actor/director filmographies, and instant YouTube trailer feeds.
+
+---
+
+## 💡 Novelty & Competitive Advantage
+
+| Feature Dimension | Legacy Platforms (Netflix, Prime, Hulu) | Aggregators (IMDb, Letterboxd) | **Cineverse AI** |
+|:---|:---|:---|:---|
+| **Recommendation Engine** | Opaque commercial engagement optimizer (pushes high-margin originals) | Static popularity charts & unweighted star averages | **Multi-objective hybrid (Latent Semantic + SVD + Taste DNA)** |
+| **Search Paradigm** | Rigid keyword & exact-title matching | Exact title, cast, and basic genre tags | **Poetic natural language & emotional mood synesthesia** |
+| **Group Decision Making** | None (manual arguing & scrolling fatigue) | Shared watchlists without consensus algorithms | **Game-theoretic Minimax fairness consensus solver** |
+| **Algorithmic Transparency** | Black box; no explanation provided | Basic user reviews | **Full mathematical explainability breakdown for every film** |
+| **Catalog Exploration** | Monolithic vertical grids & auto-playing ads | Flat text lists and database tables | **3D Rolodex Ring, Expanding Rails & Glassmorphic Theater** |
+| **Data Privacy** | Heavy behavioral tracking, profiling & data brokerage | Cookie tracking & commercial ad networks | **Zero tracking pixels; edge-cached or local sandbox execution** |
+
+### Core Innovations in Cineverse:
+
+#### 1. 🧠 Latent Semantic Subspace Projection
+Unlike legacy search engines that break when a user queries non-keyword phrases like *"haunting feeling of being watched in an empty suburban winter"*, Cineverse's latent semantic encoder maps queries directly into continuous latent concept vectors, uncovering films based on atmosphere, philosophical undertones, and plot pacing.
+
+#### 2. 🎛️ Real-Time 6-Axis Mood Synesthesia
+Users can bias their discovery trajectory dynamically using 6 psychological spectrum vectors: *Mind-Bending*, *Melancholic*, *Adrenaline*, *Uplifting*, *Heartwarming*, and *Visceral*. The weighting vectors dynamically scale latent subspace coordinates without requiring slow database re-indexing.
+
+#### 3. 👥 Game-Theoretic Minimax Group Watch Solver
+Streaming fatigue peaks when couples or groups debate what to watch. Cineverse formulates group selection as a **minimax fairness optimization problem**:
+$$\max_{m \in M} \left[ \min_{u \in U} \text{Utility}(u, m) \right] + \lambda \sum_{u \in U} \text{Utility}(u, m)$$
+This mathematically prevents any single attendee from having a miserable experience, eliminating veto stalemates.
+
+#### 4. 💎 Serendipity & Anti-Echo-Chamber Weighting
+Algorithms optimized purely for collaborative filtering trap users in homogenous recommendation bubbles (recommending only the top 10 mainstream blockbusters). Cineverse introduces an explicit **Novelty Multiplier** ($w_n \cdot \text{Novelty}(m)$) that surfaces high-quality hidden gems and world cinema based on rating-to-popularity divergence.
+
+#### 5. 🛡️ Local-First & Zero-Surveillance Architecture
+Cineverse is architected to run seamlessly both as a global edge application on [Vercel](https://cineverseai.vercel.app) and as a local offline Docker sandbox. Your personal taste data, watch journal, and mood history remain under your direct control.
 
 ---
 
@@ -88,20 +185,6 @@ Mainstream streaming platforms have a problem: **their algorithms optimize for a
 
 Cineverse combines collaborative filtering, latent semantic indexing, and content-based heuristics into an ensemble scoring pipeline:
 
-```mermaid
-graph TD
-    UserQuery["User Natural Query / Mood"] --> SemanticEncoder["Latent Semantic Plot Encoder (LSA / TF-IDF / SVD)"]
-    UserHistory["User Taste Profile / Ratings"] --> CollabModel["MovieLens Matrix Factorization (Latent Factors)"]
-    Catalog["MovieLens 32M + TMDB Catalog (9,742+ Films)"] --> FeatureStore["Vector Features & Metadata"]
-    
-    SemanticEncoder --> Ensemble["Hybrid Ranker Engine"]
-    CollabModel --> Ensemble
-    FeatureStore --> Ensemble
-    
-    Filters["Hard Filters (Decade, Genre, Runtime, Exclusions)"] --> Ensemble
-    Ensemble --> FinalRank["Ranked Cinematic Recommendations + Match Explanations"]
-```
-
 $$\text{FinalScore}(m) = w_s \cdot \text{Sim}_{\text{Semantic}}(q, m) + w_c \cdot \hat{r}_{u,m} + w_g \cdot \text{TasteOverlap}(u, m) + w_n \cdot \text{Novelty}(m)$$
 
 - **Matrix Factorization**: Trained on MovieLens (100k+ ratings in demo mode, scalable to MovieLens 32M).
@@ -111,6 +194,12 @@ $$\text{FinalScore}(m) = w_s \cdot \text{Sim}_{\text{Semantic}}(q, m) + w_c \cdo
 ---
 
 ## 🚀 Quickstart
+
+### 🌐 Live Deployment
+No installation needed! Visit the live production build:  
+👉 **[https://cineverseai.vercel.app](https://cineverseai.vercel.app)**
+
+---
 
 ### Option A: Standard Local Run (Zero External Setup Required)
 
@@ -185,7 +274,7 @@ cineverse/
 │       ├── app/                # Main router, Recommender, Catalog, Auth, DB
 │       ├── migrations/         # Alembic DB migrations
 │       └── tests/              # Flow tests and benchmark suite
-├── assets/                     # 4K UI mockups, Hero banner, and showcase media
+├── assets/                     # High-res real UI screenshots, Hero banner, and showcase media
 ├── data/                       # MovieLens dataset, pre-trained model weights (.npz)
 │   ├── catalog.json            # 9,742 movies with TMDB metadata
 │   ├── model.npz               # Trained collaborative latent factors
@@ -193,6 +282,7 @@ cineverse/
 │   └── vocabulary.json         # Vocabulary dictionary for plot indexing
 ├── ml/                         # Training pipelines (MovieLens 32M, SVD, Semantic)
 ├── compose.yaml                # Multi-service Docker Compose configuration
+├── vercel.json                 # Vercel deployment configuration
 └── package.json                # Workspace monorepo root
 ```
 
@@ -218,7 +308,7 @@ cineverse/
 
 ## 🛠️ Tech Stack & Credits
 
-- **Frontend**: [Next.js 16](https://nextjs.org/), [React 19](https://react.dev/), [TypeScript](https://www.typescriptlang.org/), [Tailwind CSS](https://tailwindcss.com/), [GSAP](https://gsap.com/), [Framer Motion](https://motion.dev/), [Lucide Icons](https://lucide.dev/)
+- **Frontend & Deployment**: [Next.js 16](https://nextjs.org/), [Vercel](https://vercel.com/), [React 19](https://react.dev/), [TypeScript](https://www.typescriptlang.org/), [Tailwind CSS](https://tailwindcss.com/), [GSAP](https://gsap.com/), [Framer Motion](https://motion.dev/), [Lucide Icons](https://lucide.dev/)
 - **Backend & ML**: [FastAPI](https://fastapi.tiangolo.com/), [NumPy](https://numpy.org/), [SciPy](https://scipy.org/), [Scikit-learn](https://scikit-learn.org/), [SQLAlchemy](https://www.sqlalchemy.org/), [Alembic](https://alembic.sqlalchemy.org/)
 - **Storage & Infrastructure**: [PostgreSQL 16](https://www.postgresql.org/) with [pgvector](https://github.com/pgvector/pgvector), [Redis 7](https://redis.io/), [Docker](https://www.docker.com/), [Caddy](https://caddyserver.com/)
 - **Datasets**: [GroupLens MovieLens](https://grouplens.org/datasets/movielens/), [The Movie Database (TMDB)](https://www.themoviedb.org/)
@@ -245,5 +335,5 @@ MovieLens data is subject to the [GroupLens License Terms](data/MOVIELENS-LICENS
 ---
 
 <div align="center">
-  <sub>Built with ❤️ for cinephiles and developers worldwide. If you find Cineverse inspiring, don't forget to give it a ⭐!</sub>
+  <sub>Built with ❤️ for cinephiles and developers worldwide. Experience Cineverse live at <a href="https://cineverseai.vercel.app"><b>cineverseai.vercel.app</b></a>!</sub>
 </div>
